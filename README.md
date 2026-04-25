@@ -19,14 +19,14 @@ You can visit the live deployed website here: https://teal-paprenjak-f54725.netl
 
 ### Option 2: Open directly
 1. Download or clone this repository.
-2. Open [index.html](/Users/mac/Desktop/SWE363/Assignments/202361930-belalshebl-assignment3/index.html) in a browser.
+2. Open [index.html](/Users/mac/Desktop/SWE363/Assignments/202361930-belalshebl-assignment4/index.html) in a browser.
 
 ### Option 3: Run locally with a server
 1. Open a terminal in the project folder.
 2. Run:
 
 ```bash
-cd 202361930-belalshebl-assignment3
+cd 202361930-belalshebl-assignment4
 python3 -m http.server 8000
 ```
 
