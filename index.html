@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = 'UTF-8'>
+        <title>My Portfolio Website</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <nav>
+            <button id="nav-menu-toggle" class="nav-btn nav-menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+                Menu
+            </button>
+
+            <div id="nav-links" class="nav-links">
+                <a href="#about">About Me</a>
+                <a href="#projects">Projects</a>
+                <a href="#github">GitHub</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#hobbies">Hobbies</a>
+                <a href="#contact-me">Contact Me</a>
+                <a href="#fun-fact">Fun Fact</a>
+
+                <button id="state-toggle" class="nav-btn" type="button" aria-expanded="false" aria-controls="state-menu">
+                    State Manager
+                </button>
+                <button id="theme-toggle" class="nav-btn" type="button" aria-pressed="false">
+                    Dark mode
+                </button>
+            </div>
+        </nav>
+
+        <div id="state-menu" class="state-menu" hidden>
+            <div class="state-menu-card">
+                <div class="state-menu-header">
+                    <h2>State Manager</h2>
+                    <button id="close-state-menu" class="close-btn" type="button" aria-label="Close state manager">x</button>
+                </div>
+
+                <form id="visitor-form" class="visitor-form">
+                    <label for="visitor-name">Your Name</label>
+                    <input type="text" id="visitor-name" name="visitor-name" placeholder="Enter your name">
+                    <div class="state-actions">
+                        <button type="submit" class="btn state-btn">Save Name</button>
+                        <button type="button" id="clear-visitor-name" class="btn state-btn secondary-btn">Clear</button>
+                    </div>
+                </form>
+
+                <div class="hidden-sections-panel">
+                    <h3>Hide Sections</h3>
+                    <p class="helper-text">Check any section you want hidden from the page.</p>
+
+                    <div class="section-checkboxes">
+                        <label><input type="checkbox" data-section-toggle="about"> About Me</label>
+                        <label><input type="checkbox" data-section-toggle="projects"> Projects</label>
+                        <label><input type="checkbox" data-section-toggle="github"> GitHub Activity</label>
+                        <label><input type="checkbox" data-section-toggle="achievements"> Achievements</label>
+                        <label><input type="checkbox" data-section-toggle="hobbies"> Hobbies</label>
+                        <label><input type="checkbox" data-section-toggle="fun-fact"> Fun Fact</label>
+                        <label><input type="checkbox" data-section-toggle="contact-me"> Contact Me</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <header class="hero" id="top">
+            <div class="hero-text">
+                <h1><span id="greeting"></span> <span id="visitor-greeting-name"></span>I'm <br><span class="accent">Belal Shebl</span></h1>
+                <p class="subtitle">A Computer Science Student</p>
+                <p class="hero-timer">You have been exploring this portfolio for <span id="time-on-site">0 seconds</span>.</p>
+                <p id="custom-message" class="hero-message">Welcome! Explore the sections that match your interests.</p>
+            </div>
+        </header>
+
+        <main>
+            <section id="about" class="about">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>
+                    I am Belal Shebl, a computer science student at King Fahd University for Petroleum and Minerals passionate about AI, cybersecurity, and building technology that solves real-world problems.
+                    Alongside my studies, I have led student initiatives, organized international conferences, and worked on projects ranging from web development to research-focused platforms.
+                    I enjoy combining technical skills with creativity to turn ideas into meaningful digital experiences.
+                    </p>
+                </div>
+
+                <div class="about-photo">
+                    <div class="photo-frame">
+                    <span class="photo-bg" aria-hidden="true"></span>
+                    <img src="assets/images/headshot-optimized.jpg" alt="My Profile Picture" loading="lazy" decoding="async" width="426" height="640">
+                    </div>
+                    <p class="tagline"><em>CS student building at the intersection of AI, security, and real-world impact.</em></p>
+                </div>
+            </section>
+
+           <section id="projects">
+                <h2>Projects</h2>
+
+                <div class="logic-panel">
+                    <div class="logic-panel-header">
+                        <h3>Explore My Work</h3>
+                        <p>Use the filters below to match projects to your interests and experience level.</p>
+                    </div>
+
+                    <div class="project-controls">
+                        <p>
+                            <label for="project-category">Filter by Category</label>
+                            <select id="project-category">
+                                <option value="all">All Projects</option>
+                                <option value="ai">AI Projects</option>
+                                <option value="web">Web Projects</option>
+                                <option value="security">Security Projects</option>
+                                <option value="blockchain">Blockchain Projects</option>
+                            </select>
+                        </p>
+
+                        <p>
+                            <label for="project-sort">Sort Projects</label>
+                            <select id="project-sort">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="title">Title A-Z</option>
+                            </select>
+                        </p>
+                    </div>
+
+                    <p id="project-results" class="helper-text" aria-live="polite"></p>
+                </div>
+
+                <div class="logic-panel">
+                    <div class="logic-panel-header">
+                        <h3>Choose Your Experience Level</h3>
+                        <p>Select your level and I will highlight the projects that fit you best.</p>
+                    </div>
+
+                    <div class="experience-controls" role="radiogroup" aria-label="Visitor experience level">
+                        <button type="button" class="level-btn active" data-level="all" aria-pressed="true">All Visitors</button>
+                        <button type="button" class="level-btn" data-level="beginner" aria-pressed="false">Beginner</button>
+                        <button type="button" class="level-btn" data-level="advanced" aria-pressed="false">Advanced</button>
+                    </div>
+
+                    <div id="experience-message" class="experience-message" aria-live="polite"></div>
+                </div>
+
+                <div class="project-grid">
+                    <details class="project-card" data-category="ai" data-level="advanced" data-date="2025-03-01">
+                        <summary>
+                            <h3>Project 1: Arabic Sign Language to Text Translation using Deep Learning</h3>
+                            <span class="project-toggle">Show details</span>
+                        </summary>
+
+                        <div class="project-content">
+                            <p>
+                                Developed an AI-based translation system that converts Arabic Sign Language gestures into written Arabic text. 
+                                The model leverages sequence-based deep learning architectures, including LSTMs and Transformers, to capture temporal motion patterns and contextual relationships between gestures. 
+                                This project focuses on improving accessibility by bridging communication gaps between the deaf community, the Arabic text-based digital systems, and people who do not know sign language.
+                            </p>
+                            <p class="project-meta"><strong>Category:</strong> AI | <strong>Level:</strong> Advanced | <strong>Date:</strong> March 2025</p>
+                            <img src="assets/images/project1.jpg" alt="Project 1 screenshot" loading="lazy" decoding="async" width="1000" height="571">
+                        </div>
+                    </details>
+
+                    <details class="project-card" data-category="blockchain security web" data-level="beginner" data-date="2024-10-15">
+                        <summary>
+                            <h3>Project 2: Blockchain-Based Smart Contract for Secure Supply Chain Transactions</h3>
+                            <span class="project-toggle">Show details</span>
+                        </summary>
+
+                        <div class="project-content">
+                            <p>
+                                Designed and deployed a smart contract on the Ethereum Sepolia test network to model secure and transparent supply chain transactions. 
+                                The system uses blockchain principles and cryptographic mechanisms to ensure data integrity, traceability, and trust between parties without relying on a central authority. 
+                                This project demonstrates the application of decentralized security and blockchain technology to real-world logistical workflows.
+                            </p>
+                            <p class="project-meta"><strong>Category:</strong> Blockchain, Security, Web | <strong>Level:</strong> Beginner-Friendly | <strong>Date:</strong> October 2024</p>
+                            <img src="assets/images/project2.png" alt="Project 2 screenshot" loading="lazy" decoding="async" width="1225" height="651">
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <section id="github">
+                <h2>GitHub Activity</h2>
+
+                <div class="api-card github-card">
+                    <p id="github-status">Loading GitHub repositories...</p>
+                    <div id="github-repos" class="github-repo-list" aria-live="polite"></div>
+                    <p class="helper-text github-note">
+                        Live data fetched from the GitHub API to keep this portfolio connected to my current public work.
+                    </p>
+                </div>
+            </section>
+
+            <section id="achievements">
+                <h2>Achievements</h2>
+                
+                <h3>IEEE KFUPM Student Branch Chair</h3>
+                <ul>
+                    <li>Led the IEEE KFUPM Student Branch and contributed to organizing technical events, workshops, and student initiatives</li>
+                    <li>Supported engagement between students and the engineering and technology community</li>
+                    <li>Assisted in planning activities that promoted professional development and technical learning</li>
+                </ul>
+                
+                <h3>Vice Chair of HR at the Global Student Research Conference (GSR) 2025</h3>
+                <ul>
+                    <li>Led the Human Resources team for an international research conference, managing recruitment, team coordination, and internal organization. </li>
+                    <li>Played a key role in building and supporting a large volunteer team to ensure smooth execution of the event.</li>
+                    <li>Created and deployed an onboarding system for conference organizing members</li>
+                    <li>Managed and responded to other commmitee chairs' human resources needs and requests</li>
+                    <li>Named winner of the 2024/2025 Best of CASE Asia-Pacific Region Award</li>
+                </ul>
+                
+                <h3>TEDxKFUPM 2024 Organizing Team Member</h3>
+                <ul>
+                    <li>Contributed to organizing a university-level TEDx event by supporting speaker coordination and event operations</li>
+                    <li>Helped deliver a high-impact platform that brought together ideas, innovation, and a large student audience.</li>
+                    <li>Part of the Speakers Affairs Team that supported and trained the speakers</li>
+                    <li>Part of the Sponsorships Team that contacted and coordinated with event sponosors like HungerStation, KPMG, etc...</li>
+                </ul>
+            </section>
+
+            <section id="hobbies">
+                <h2>My Hobbies</h2>
+                <ul>
+                    <li>Produce short films and cinematic videos, focusing on storytelling, pacing, and visual composition</li>
+                    <li>Design digital graphics and visual assets for media, events, and online content</li>
+                    <li>Create visual effects (VFX) to enhance video projects, blending technical tools with creative direction</li>
+                </ul>
+            </section>
+
+            <section id="fun-fact">
+                <h2>Daily Fun Fact</h2>
+                <div class="api-card">
+                    <p id="fact-text">Loading a fun fact...</p>
+                    <button id="new-fact-btn" class="btn" type="button">Get another fact</button>
+                </div>
+            </section>
+
+            <section id="contact-me">
+                <h2>Contact Me</h2>
+
+                <form action="" method="POST" class="contact-form" id="contact-form" novalidate>
+                    <div class="form-row">
+                        <p>
+                            <label for="first">First Name</label>
+                            <input type="text" name="first" id="first">
+                            <small class="error-message" id="first-error"></small>
+                        </p>
+
+                        <p>
+                            <label for="last">Last Name</label>
+                            <input type="text" name="last" id="last">
+                            <small class="error-message" id="last-error"></small>
+                        </p>
+                    </div>
+
+                    <p>
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email">
+                        <small class="error-message" id="email-error"></small>
+                    </p>
+
+                    <p>
+                        <label for="contact-reason">Reason for Contact</label>
+                        <select name="contact-reason" id="contact-reason">
+                            <option value="">Select a reason</option>
+                            <option value="collaboration">Collaboration</option>
+                            <option value="project">Project Question</option>
+                            <option value="event">Event Opportunity</option>
+                        </select>
+                        <small class="error-message" id="reason-error"></small>
+                    </p>
+
+                    <p>
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" cols="50"></textarea>
+                        <small class="error-message" id="message-error"></small>
+                    </p>
+
+                    <button type="submit" class="btn">Submit</button>
+
+                    <p id="form-success" class="success-message" aria-live="polite"></p>
+                </form>
+            </section>
+
+        </main>
+        <script src="js/script.js"></script>
+    </body>
+
+
+</html>
