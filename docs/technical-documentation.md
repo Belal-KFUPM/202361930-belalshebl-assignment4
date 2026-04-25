@@ -1,4 +1,4 @@
-# Technical Documentation – Portfolio Website (Assignment 3)
+# Technical Documentation – Portfolio Website (Assignment 4)
 
 ## Overview
 This project is a responsive, single-page portfolio website built with **HTML**, **CSS**, and **JavaScript**.  

@@ -1,4 +1,4 @@
-# Assignment 3 – Portfolio Website
+# Assignment 4 – Portfolio Website
 
 ## Project Description
 This project is a responsive single-page portfolio website built with HTML, CSS, and JavaScript. It presents my background, projects, achievements, hobbies, and contact form in one page, while also adding interactive features such as:
@@ -14,11 +14,14 @@ This project is a responsive single-page portfolio website built with HTML, CSS,
 
 ## Setup Instructions
 
-### Option 1: Open directly
+### Option 1: Visit Live Deployed Link
+You can visit the live deployed website here: https://teal-paprenjak-f54725.netlify.app/
+
+### Option 2: Open directly
 1. Download or clone this repository.
 2. Open [index.html](/Users/mac/Desktop/SWE363/Assignments/202361930-belalshebl-assignment3/index.html) in a browser.
 
-### Option 2: Run locally with a server
+### Option 3: Run locally with a server
 1. Open a terminal in the project folder.
 2. Run:
 

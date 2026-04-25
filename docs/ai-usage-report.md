@@ -1,6 +1,6 @@
-# AI Usage Report (Assignment 3)
+# AI Usage Report (Assignment 4)
 
-This document explains how I used AI across the three submissions for this portfolio project, with emphasis on the work completed for Assignment 3.
+This document explains how I used AI across the three submissions for this portfolio project.
 
 ## Tools Used & Use Cases
 
